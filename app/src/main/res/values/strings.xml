@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Washman</string>
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Remove Tough Stain!</string>
+    <string name="slide_1_desc">We use the best anti stain chemicals around, fabric friendly too</string>
+
+    <string name="slide_2_title">Find ironing a daunting task?</string>
+    <string name="slide_2_desc">we are the goto guys!</string>
+
+    <string name="slide_3_title">Great Discounts</string>
+    <string name="slide_3_desc">Best discounts on every single service we offer including delivery!</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
