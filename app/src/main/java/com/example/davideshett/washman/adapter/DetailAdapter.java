@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.example.davideshett.washman.DetailedActivity;
 import com.example.davideshett.washman.R;
 import com.example.davideshett.washman.model.Service;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -21,22 +22,23 @@ private Context mContext;
 private List<Service> serviceList;
 
 public class MyViewHolder extends RecyclerView.ViewHolder {
-    public TextView materialName, count;
-    public ImageView materialPic, overflow;
+    public TextView materialName, materialPrice;
+    public ImageView materialPic;
 
     public MyViewHolder(View view) {
         super(view);
-        materialName = (TextView) view.findViewById(R.id.material_name);
-        materialPic = (ImageView) view.findViewById(R.id.material);
+        materialName =  view.findViewById(R.id.material_name);
+        materialPrice = view.findViewById(R.id.material_price);
+        materialPic = view.findViewById(R.id.material);
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Service service = serviceList.get(getAdapterPosition());
-                Context context = view.getContext();
-                Intent intent = new Intent(context, DetailedActivity.class);
-                intent.putExtra("service_price", service.getPrice());
-                context.startActivity(intent);
+              /*  Service service = serviceList.get(getAdapterPosition());
+                Context context = view.getContext();*/
+              //  Intent intent = new Intent(context, DetailedActivity.class);
+              //  intent.putExtra("service_price", service.getPrice());
+              //  context.startActivity(intent);
             }
         });
 
@@ -51,17 +53,21 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.detailed_layout, parent, false);
-
-        return new DetailAdapter.MyViewHolder(itemView);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.detailed_layout, parent, false);
+        return new MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Service service = serviceList.get(position);
         holder.materialName.setText(service.getName());
-        holder.materialPic.setImageResource(service.getThumbnail());
+        holder.materialPrice.setText("₦"+service.getPrice());
+
+      //  Picasso.with(mContext).load(service.getThumbnail()).fit().into(holder.materialPic);
+
+        Picasso.with(mContext).load(service.getThumbnail()).into(holder.materialPic);
+
+        //holder.materialPic.setImageResource(service.getThumbnail());
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.example.davideshett.washman;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -51,28 +52,33 @@ public class DetailedActivity extends AppCompatActivity {
                 R.drawable.senator
         };
 
-        Service a = new Service("Agbada", covers[0], 500.00);
+        Service a = new Service("Agbada", covers[0], 500);
         serviceList.add(a);
 
-        a = new Service("Bed sheet",  covers[1],400.00);
+        a = new Service("Bed sheet",  covers[1],400);
         serviceList.add(a);
 
-        a = new Service("Curtain", covers[2],300.00);
+        a = new Service("Curtain", covers[2],300);
         serviceList.add(a);
 
-        a = new Service("Jean", covers[3],200.00);
+        a = new Service("Jean", covers[3],200);
         serviceList.add(a);
 
-        a = new Service("Shirt", covers[4],200.00);
+        a = new Service("Shirt", covers[4],200);
         serviceList.add(a);
 
-        a = new Service("Suit", covers[5],500.00);
+        a = new Service("Suit", covers[5],500);
         serviceList.add(a);
 
-        a = new Service("Senator", covers[6],400.00);
+        a = new Service("Senator", covers[6],400);
         serviceList.add(a);
 
         adapter.notifyDataSetChanged();
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }
